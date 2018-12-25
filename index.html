@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Facebook video downloader - download videos from Facebook free.Facebook Video Downloader Online, Download Facebook Videos and Save them directly from facebook to your computer or mobile for Free without Software. We provide also a Video Downloader Chrome Extension. FBDOWN Best Facebook Video Downloader.">
+    <meta name="author" content="SoykotHasan">
+    <title>Facebook Video Downloader</title>
+    <link href="https://fbdown.github.io/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fbdown.github.io/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header clearfix">
+        <h3 class="text-muted">Facebook Video Downloader</h3>
+      </header>
+      <main role="main">
+        <div class="jumbotron">
+            <form id="videoForm">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Facebook Video Url</label>
+                    <input type="text" class="form-control" name="url" placeholder="Video Url">
+                    <small id="emailHelp" class="form-text text-muted">Example: https://www.facebook.com/lovetravel.by.MRD/videos/713165402207914/</small>
+                  </div>
+                <button type="submit" class="btn btn-primary">Download</button>
+            </form>
+            <hr>
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-8 video-block">
+                </div>
+            </div>
+        </div>
+      </main>
+      <footer class="footer">
+       
+      </footer>
+    </div>
+    <script type="text/javascript" src="https://fbdown.github.io/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#videoForm").submit(function(e) {
+                e.preventDefault();
+                var url = "downloader.php";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: $("#videoForm").serialize(),
+                    success: function(data){
+                       $('.video-block').html(data);
+                    }                     
+                });
+            });
+        });
+    </script>
+  </body>
+</html>
