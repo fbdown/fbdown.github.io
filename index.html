@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Facebook video downloader - download videos from Facebook free.Facebook Video Downloader Online, Download Facebook Videos and Save them directly from facebook to your computer or mobile for Free without Software. We provide also a Video Downloader Chrome Extension. FBDOWN Best Facebook Video Downloader.">
+    <meta name="keywords" content="facebook video downloader,download facebook videos,facebook online downloader, grab facebook online, free facebook video downloader,baixar vídeos do Facebook,baixar facebook,video downloader extension chrome">
+    <meta name="author" content="SoykotHasan">
+    <title>Facebook Video Downloader</title>
+    <meta name="google-site-verification" content="8GZlLmI8SWV8vtA-gH9X51EH5DoSRGgvKklEYNjlLrg" />
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header clearfix">
+        <h3 class="text-muted">Facebook Video Downloader</h3>
+        <p class="lead">Facebook Video Downloader Online, Download Facebook Videos and Save them directly from facebook to your computer or mobile for Free without Software. We provide also a Video Downloader Chrome Extension. FBDOWN Best Facebook Video Downloader.</p>
+      </header>
+      <main role="main">
+        <div class="jumbotron">
+            <form id="videoForm">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Facebook Video Url</label>
+                    <input type="text" class="form-control" name="url" placeholder="Video Url">
+                    <small id="emailHelp" class="form-text text-muted">Enter Facebook Video URL</small>
+                  </div>
+                <button type="submit" class="btn btn-primary">Download</button>
+            </form>
+            <hr>
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-8 video-block">
+                </div>
+            </div>
+        </div>
+      </main>
+      <footer class="footer">
+       <div class="row">
+         <div class="col-md-12 text-center border-top">
+           <p class="mb0">&copy; Copyright 2019 <a href="/">Fbdown</a>. All Rights Reserved. <br> Designed by <a href="https://twitter.com/SoykotHasan4">@SoykotHasan</a></p>
+         </div>
+       </div>
+      </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#videoForm").submit(function(e) {
+                e.preventDefault();
+                var url = "downloader.php";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: $("#videoForm").serialize(),
+                    success: function(data){
+                       $('.video-block').html(data);
+                    }                     
+                });
+            });
+        });
+    </script>
+  </body>
+</html>
