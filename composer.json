@@ -1,0 +1,12 @@
+{
+    "name": "pandian/facebook-video-downloader",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "embed/embed": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
